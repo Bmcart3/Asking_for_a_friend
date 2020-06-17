@@ -88,10 +88,8 @@
     <div class="column is-8">
       <div class="box">
         <div id="display-question">
-          <h3 id="display-question-title"></h3>
-          <div class="content">
-            <p id="display-question-content"></p>
-          </div>
+          <p class="title" id="display-question-title">{{questions.0.title}}</p>
+          <p class="subtitle" id="display-question-content">{{questions.0.question}}</p>
         </div>
         <hr>
         <!--Displays the answers to the question that was clicked from the panels-->
@@ -99,6 +97,9 @@
           <h3 id="answers-heading">Answers</h3>
           <div class="content">
             <ol id="answer-list">
+              {{#each Answers}}
+              <li>{{answer}}</li>
+              {{/each}}
             </ol>
           </div>
         </div>
@@ -108,7 +109,7 @@
         <form action="">
           <div class="control">
             <textarea class="textarea mb-2" id="answer-input" placeholder="Enter your answer here" rows="8"></textarea>
-            <input class="button" type="submit" value="Submit" id ="answer-add">
+            <input class="button" type="submit" value="Submit" id="answer-add">
           </div>
         </form>
       </div>

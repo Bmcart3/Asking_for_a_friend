@@ -48,6 +48,15 @@ module.exports = function(app) {
       });
   });
 
+  // app.get('/questions', isAuthenticated, function(req,res) {
+  //   db.Answer.findAll({where: {QuestionId:{
+  //     [Op.eq]: 2
+  //   }}})
+  //     .then(answers => {
+  //       res.render('questions', { answers: answers });
+  //     });
+  // });
+
   //isAuthenticated above is the middleware being inserted into just a specific route.
   //On line 27, it is checking to see if the user is authenticated before sending back the questions page.
 };

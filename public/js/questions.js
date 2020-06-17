@@ -20,14 +20,18 @@ $(document).ready(function() {
   });
 
   $('#answer-add').on('click', function(event) {
+    console.log(this);
+    var id = $(this).attr('data-id');
+    var testid = (typeof id === 'undefined') ? 1 : id; //this was originally just ----var id = $(this).attr('data-id');
+    console.log(id);
     event.preventDefault();
-    var id = $(this).data('id');
     var newAnswer = {
       answer: $('#answer-input').val().trim()
     };
-    $.post('/api/questions/' + id + '/answers', newAnswer)
+    $.post('/api/questions/' + testid + '/answers', newAnswer) //This originally just had id instead of testid;
       .then(function(response) {
-        // create a new <li> and append it to the <ol> in 
+        console.log(response);
+        // create a new <li> and append it to the <ol> in questions.handlebars
         var newAnswer = $('<li>' + response.answer + '</li>');
         $('#answer-list').append(newAnswer);
         $('#answer-input').val('');

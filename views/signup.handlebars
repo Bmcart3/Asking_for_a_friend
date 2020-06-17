@@ -13,18 +13,15 @@
 
     <div class="navbar-end">
         <div class="navbar-item">
-            <div class="buttons">
-                <a class="button is-light" href="/logout">Log Out</a>
-            </div>
+            <a class="button is-light" href="/logout">Log Out</a>
         </div>
     </div>
 </nav>
 <!--End navigation-->
 <main class="section">
     <div class="container">
-        <div class="columns">
-            <div class="column"></div>
-            <div class="column is-4">
+        <div class="columns is-centered">
+            <div class="column is-4 ">
                 <div id="form-container" class="box">
                     <p class="content form-header">Get the answers to your burning questions!</p>
                     <!--Sign Up form starts here-->
@@ -38,11 +35,12 @@
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-user"></i>
                                 </span>
-                                <span class="icon is-small is-right">
+                                {{!-- <span class="icon is-small is-right">
                                     <i class="fas fa-check"></i>
-                                </span>
+                                </span> --}}
                             </div>
-                            <p id="" class="help is-success">This username is available</p>
+                            <div style="display: none" id="alert" role="alert">
+                            </div>
                         </div>
                         <div class="field">
                             <label class="label" for="password">
@@ -54,13 +52,13 @@
                             <label class="label" for="password">
                                 Confirm Password
                             </label>
-                            <input type="password" class="input" placeholder="Re-enter your password" id="confirm-password">
+                            <input type="password" class="input" placeholder="Re-enter your password" id="password-verify">
                         </div>
-                        <button class="button is-success">Sign Up</button>
+                        <button class="button is-medium is-fullwidth is-success mb-2">Sign Up</button>
+                        <a class="button is-small is-fullwidth is-light" href="/signup">Already have an account? Sign Up</a>
                     </form>
                 </div>
             </div>
-            <div class="column"></div>
         </div>
     </div>
 </main>
