@@ -35,10 +35,10 @@ $(document).ready(function() {
   });
 
   // When a question is clicked from the "Unanswered Questions" or "Answered Questions" panels
-  $('.panel-block').on('click', function(event) {
+  $('a.panel-block').on('click', function(event) {
     event.preventDefault();
-    // remove the <li>s from the <ol> in "Answers"
-    $('#answer-list').empty();
+    $('#answer-list').empty(); // remove the <li>s from the <ol> in "Answers"
+    // $(this).addClass('is-active'); // Bulma CSS class/Need to removeClass() somewhere
     var id = $(this).data('id');
     var $title = $('#display-question-title');
     var $content = $('#display-question-content');
