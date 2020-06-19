@@ -5,6 +5,7 @@ body {
 
 .body-container {
     background-color: rgb(252, 236, 222);
+    padding-top: 3.25rem;
 }
 
 .tagline {
