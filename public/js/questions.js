@@ -24,7 +24,6 @@ $(document).ready(function () {
             $content.text(response[0].question);
             $username.text('Posted by: ' + response[0].username);
             $created.text(response[0].createdAt);
-            // I changed this index to just 0 since there will only ever be one item in the array
             let answers = response[0].Answers;
             // grabs only the last 5 answers from the Answers object
             let recentAnswers = answers.slice(-5);
@@ -44,11 +43,9 @@ $(document).ready(function () {
             $content.text(response[0].question);
             $username.text('Posted by: ' + response[0].username);
             $created.text(response[0].createdAt);
-            // I changed this index to just 0 since there will only ever be one item in the array
             let answers = response[0].Answers;
             // grabs only the last 5 answers from the Answers object
             let recentAnswers = answers.slice(-5);
-            // render a new <li> for each recent answer
             recentAnswers.forEach((answer) => {
               let newli = $('<li>').text(answer.answer);
               $($answerList).append(newli);
@@ -72,7 +69,6 @@ $(document).ready(function () {
       });
 
   };
-  // calling function to render last clicked question
   renderLastQuestion();
 
   // When user submits a new question...
@@ -84,7 +80,7 @@ $(document).ready(function () {
         question: $('#question-input').val().trim(),
         username: username
       };
-      // Does a post to the question route.
+
       $.post('/api/questions', newQuestion)
         .then(function (response) {
           localStorage.setItem('questionId', response.id);
@@ -111,7 +107,6 @@ $(document).ready(function () {
     };
     $.post('/api/questions/' + id + '/answers', newAnswer)
       .then(function (response) {
-        // create a new <li> and append it to the <ol> in questions.handlebars
         let newAnswer = $('<li>' + response.answer + '</li>');
         $($answerList).append(newAnswer);
         $('#answer-input').val('');
@@ -121,11 +116,8 @@ $(document).ready(function () {
   // When a question is clicked from the "All Questions" panel
   $('a.panel-block').on('click', function (event) {
     event.preventDefault();
-    // remove the <li>s from the <ol> in "Answers"
     $($answerList).empty();
-    // get the data-id from questions.handlebars
     let id = $(this).attr('data-id');
-    // add a data-id attribute to the submit button in the answer form
     $($answerBtn).attr('data-id', id);
 
     // Render the questions and answers to the browser
@@ -138,13 +130,10 @@ $(document).ready(function () {
         $created.text(response[0].createdAt);
         // $created.text(moment.utc(response[i].createdAt.local().format('LLL')));
 
-        // set the Question's id to local storage to use when page reloads
         localStorage.setItem('questionId', response[0].id);
-        // I changed this index to just 0 since there will only ever be one item in the array
         let answers = response[0].Answers;
         // grabs only the last 5 answers from the Answers object
         let recentAnswers = answers.slice(-5);
-        // render a new <li> for each recent answer
         recentAnswers.forEach((answer) => {
           let newli = $('<li>').text(answer.answer);
           $($answerList).append(newli);
