@@ -3,13 +3,14 @@ body {
     height: 100vh;
 }
 
+.logo {
+    height: 300px;
+    width: 300px;
+}
+
 .body-container {
     background-color: rgb(252, 236, 222);
-<<<<<<< HEAD
-    padding-top: 3.25rem;
-=======
     padding-top: 3rem;
->>>>>>> 90575cac7d0ac818fd1f4f7bb6705c6b9adcaf0f
 }
 
 .tagline {
@@ -18,14 +19,14 @@ body {
     font-size: 1.5rem;
 }
 
-#login,
-#sign-up {
+#login-link,
+#signup-link {
     font-family: 'Quicksand', sans-serif;
     font-weight: 400;
 }
 
-#login:hover,
-#sign-up:hover {
+#login-link:hover,
+#signup-link:hover {
     font-weight: 600;
 }
 
@@ -99,6 +100,10 @@ body {
     margin-left: 1em;
 }
 
+#answer-list > li {
+    padding-bottom: .5rem;
+}
+
 #alert {
     color: red;
     font-family: 'Didact Gothic', sans-serif;
@@ -106,4 +111,85 @@ body {
 
 .remove-num {
     list-style-type: none;
+}
+
+@media screen and (max-width: 500px) {
+    
+    .logo {
+        height: 250px;
+        width: 250px;
+        margin-top: .75rem;
+    }
+
+    #login-signup-section {
+        padding: 1.5rem 1rem;
+    }
+
+    .card-content,
+    .form-header,
+    .panel-heading {
+        font-size: 1.5rem;
+    }
+    
+    #tagline-div {
+        display: none;
+    }
+    
+    #login-link,
+    #signup-link {
+        font-size: .75rem;
+    }
+
+    .panel-block {
+        font-size: .85rem;
+    }
+
+    #display-question-title {
+        font-size: 1rem;
+    }
+
+    #display-question-content {
+        font-size: .75rem;
+        padding-top: .25rem;
+    }
+
+    #display-username {
+        margin-bottom: 0;
+    }
+
+    #answer-list {
+        font-size: .75rem;
+    }
+
+    #answers-heading,
+    #answer-form-heading,
+    #question-heading {
+        font-family: 'Patrick Hand', sans-serif;
+        font-size: 1.25rem;
+        font-weight: 600;
+        padding-bottom: 10px;
+    }
+
+    /* handles the submit & textarea sizes */
+    input.is-normal,
+    textarea.is-normal {
+        display: none;
+    }
+    input.is-small,
+    textarea.is-small {
+        display: block;
+    }
+       
+}
+
+@media screen and (min-width: 501px) {
+    /* handles the submit & textarea sizes */
+    input.is-normal,
+    textarea.is-normal {
+      display: block;
+    }
+    input.is-small,
+    textarea.is-small {
+      display: none;
+    }
 }
