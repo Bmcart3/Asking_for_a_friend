@@ -5,7 +5,11 @@ body {
 
 .body-container {
     background-color: rgb(252, 236, 222);
+<<<<<<< HEAD
     padding-top: 3.25rem;
+=======
+    padding-top: 3rem;
+>>>>>>> 90575cac7d0ac818fd1f4f7bb6705c6b9adcaf0f
 }
 
 .tagline {
