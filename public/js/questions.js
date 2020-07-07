@@ -105,6 +105,7 @@ $(document).ready(function () {
     let newAnswer = {
       answer: $('#answer-input').val().trim()
     };
+    console.log(newAnswer);
     $.post('/api/questions/' + id + '/answers', newAnswer)
       .then(function (response) {
         let newAnswer = $('<li>' + response.answer + '</li>');
@@ -140,4 +141,36 @@ $(document).ready(function () {
         });
       });
   });
+
+
+  function mediaQuery(smallScreen) {
+    if (smallScreen.matches) {
+      $('#answer-input').removeClass('is-normal');
+      $('#answer-input').addClass('is-small');
+      $('#answer-add').removeClass('is-normal');
+      $('#answer-add').addClass('is-small');
+      $('#title-input').removeClass('is-normal');
+      $('#title-input').addClass('is-small');
+      $('#question-input').removeClass('is-normal');
+      $('#question-input').addClass('is-small');
+      $('#question-form').removeClass('is-normal');
+      $('#question-form').addClass('is-small');
+    } else {
+      $('#answer-input').removeClass('is-small');
+      $('#answer-input').addClass('is-normal');
+      $('#answer-add').removeClass('is-small');
+      $('#answer-add').addClass('is-normal');
+      $('#title-input').removeClass('is-small');
+      $('#title-input').addClass('is-normal');
+      $('#question-input').removeClass('is-small');
+      $('#question-input').addClass('is-normal');
+      $('#question-form').removeClass('is-small');
+      $('#question-form').addClass('is-normal');
+    }
+  }
+
+  const smallScreen = window.matchMedia('(max-width: 500px)');
+  mediaQuery(smallScreen); // Call listener function at run time
+  smallScreen.addListener(mediaQuery); // Attach listener function on state changes
+
 });

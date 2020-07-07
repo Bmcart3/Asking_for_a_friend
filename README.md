@@ -29,16 +29,18 @@ _Deployed on Heroku_
         <summary markdown="span">Expand to view Screenshots</summary>
 
 _Home page_
-![](public/assets/img/AFAF_index.PNG)
+![](public/assets/img/AFAF_Home.png)
 
 _Questions page_
 ![](public/assets/img/AFAF_questions.PNG)
 
 _Mobile responsive design_
 
-<img src="public/assets/img/AFAF_mobile1.PNG" width="250">
+<img src="public/assets/img/AFAF_mobile_1.PNG" width="250">
 
-<img src="public/assets/img/AFAF_mobile2.PNG" width="250">
+<img src="public/assets/img/AFAF_mobile_2.PNG" width="250">
+
+<img src="public/assets/img/AFAF_mobile_3.PNG" width="250">
 
 </details>
 
