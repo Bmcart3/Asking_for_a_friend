@@ -14,6 +14,7 @@ body {
 }
 
 .tagline {
+    padding: 1rem 0;
     font-family: 'Quicksand', sans-serif;
     font-weight: 400;
     font-size: 1.5rem;
@@ -51,8 +52,7 @@ body {
 /* section around main questions.handlebars */
 #questions-main {
     background-color: rgb(252, 236, 222);
-    padding-top: 2rem;
-
+    padding: 3rem 3.5rem;
 }
 
 /* styles main question/answer body in questions.handlebars */
@@ -113,7 +113,7 @@ body {
     list-style-type: none;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 767px) {
     
     .logo {
         height: 250px;
@@ -138,6 +138,14 @@ body {
     #login-link,
     #signup-link {
         font-size: .75rem;
+    }
+
+    .card-column {
+        margin: 0 auto;
+    }
+
+    #questions-main {
+        padding: 2rem 1.5rem;
     }
 
     .panel-block {
@@ -169,4 +177,58 @@ body {
         font-weight: 600;
         padding-bottom: 10px;
     }
+}
+
+@media screen and (width: 768px) {
+    .body-container {
+        padding-top: 7rem;
+    }
+
+    .logo {
+        height: 250px;
+        width: 250px;
+    }
+
+    #login-signup-section {
+        padding: 1.5rem 1rem;
+    }
+
+    .card-column {
+        margin: 0 auto;
+    }
+
+    .card-content {
+        font-size: 1.75rem;
+    }
+    
+    #login-link,
+    #signup-link {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (width: 1024px) {
+    .body-container {
+        padding-top: 10rem;
+    }
+
+    .logo {
+        height: 375px;
+        width: 375px;
+    }
+    
+    .card-content {
+        font-size: 2rem;
+        width: 25vw;
+    }
+    
+    .tagline {
+        font-size: 2rem;
+    }
+    
+    #login-link,
+    #signup-link {
+        font-size: 1.2rem;
+    }
+
 }
