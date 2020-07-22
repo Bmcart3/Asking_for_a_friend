@@ -36,4 +36,9 @@ module.exports = function(app) {
         res.render('questions', { questions: questions });
       });
   });
+
+  app.get('/dashboard', isAuthenticated, function(req, res) {
+    res.render('dashboard');
+  });
+
 };
