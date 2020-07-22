@@ -10,7 +10,7 @@ body {
 
 .body-container {
     background-color: rgb(252, 236, 222);
-    padding-top: 20vh;
+    padding-top: 10rem;
 }
 
 .tagline {
@@ -123,4 +123,10 @@ body {
         font-size: 1.2rem;
     }
 
+}
+
+@media screen and (min-width: 2560px) {
+    .body-container {
+        padding-top: 15rem;
+    }
 }
