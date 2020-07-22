@@ -1,3 +1,25 @@
+.navlink {
+    font-family: 'Quicksand', sans-serif;
+    color: black;
+    font-weight: 500;
+}
+
+.navlink:hover {
+    color: black;
+    font-weight: 600;
+}
+
+.logout-btn {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #d81f57;
+    color: white;
+    border: none;
+}
+
+.logout-btn:hover {
+    color: white;
+}
+
 .card-content,
 .form-header,
 .panel-heading {
@@ -53,7 +75,9 @@
     font-weight: 500;
 }
 
-#display-createdAt {
+#display-createdAt, 
+#display-username {
+    color: #d81f57;
     font-family: 'Quicksand', sans-serif;
 }
 
