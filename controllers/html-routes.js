@@ -68,5 +68,4 @@ module.exports = function(app) {
         res.render('dashboard', { questions: questions });
       });
   });
-
 };
