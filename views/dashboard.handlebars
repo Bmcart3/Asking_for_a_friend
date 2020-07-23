@@ -18,7 +18,7 @@
         <strong>Welcome &nbsp;<span class="member-name"></span></strong>
       </p>
     </div>
-     <div class="navbar-end">
+    <div class="navbar-end">
       <div class="navbar-item">
         <a class="navlink" href="/questions"><span><i class="fas fa-home"></i></span> Home</a>
       </div>
@@ -29,3 +29,73 @@
   </div>
 </nav>
 <!--Navbar End-->
+<section id="questions-main" class="section">
+  <div class="columns">
+    <div class="column is-4">
+      <!--Ask New Question -->
+      <article class="panel">
+        <p class="panel-heading">
+          Your Questions
+        </p>
+        <ul id="question-list">
+          {{#each questions}}
+          {{#unless answer}}
+          <li>
+            <a class="panel-block" data-id="{{ id }}">
+              <span class="panel-icon">
+                <i class="fas fa-question" aria-hidden="true"></i>
+              </span>
+              {{ title }}
+            </a>
+          </li>
+          {{/unless}}
+          {{/each}}
+        </ul>
+      </article>
+      <!--All Questions-->
+      <article class="panel">
+        <p class="panel-heading">
+          Questions You've Answered
+        </p>
+        <ul id="question-list">
+          {{#each questions}}
+          {{#unless answer}}
+          <li>
+            <a class="panel-block" data-id="{{ id }}">
+              <span class="panel-icon">
+                <i class="fas fa-question" aria-hidden="true"></i>
+              </span>
+              {{ title }}
+            </a>
+          </li>
+          {{/unless}}
+          {{/each}}
+        </ul>
+      </article>
+    </div>
+    <!--Display the clicked question-->
+    <div class="column is-8">
+      <div class="box" id="question-box">
+        {{!-- <h3 id="question-heading">Just asking for a friend...</h3> --}}
+        <div id="display-question">
+          <h4 id="display-question-title"></h4>
+          <p id="display-question-content"></p>
+          <div id="question-details">
+            <span id="display-username" class="content is-small mt-3"></span>
+            <span id="display-createdAt" class="content is-small mt-3"></span>
+          </div>
+
+        </div>
+        <hr>
+        <!--Display the answers to the clicked question-->
+        <div>
+          <h3 id="answers-heading">Answers</h3>
+          <div class="content">
+            <ol id="answer-list">
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
