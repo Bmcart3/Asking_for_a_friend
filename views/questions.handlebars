@@ -4,18 +4,17 @@
       <img src="/assets/img/AskingForAFriend_Nav.png" width="175" height="75">
     </a>
 
-    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-      data-target="navbarBasicExample">
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
     </a>
   </div>
 
-  <div id="navbarBasicExample" class="navbar-menu">
+  <div class="navbar-menu">
     <div class="navbar-start">
       <p class="navbar-item" id="welcome-user">
-        Welcome &nbsp;<span class="member-name"></span>
+        Welcome <span class="member-name"></span>
       </p>
     </div>
     <div class="navbar-end">
@@ -40,9 +39,11 @@
         <div class="panel-block">
           <div class="control">
             <label for="title" class="label">Title</label>
-            <input class="input mb-2 is-normal" id="title-input" type="text" placeholder="Enter a title for your question">
+            <input class="input mb-2 is-normal" id="title-input" type="text"
+              placeholder="Enter a title for your question">
             <label for="content" class="label">Content</label>
-            <textarea class="textarea is-normal" id="question-input" placeholder="Provide any necessary details"></textarea>
+            <textarea class="textarea is-normal" id="question-input"
+              placeholder="Provide any necessary details"></textarea>
             <input class="button mt-3 is-normal" id="question-form" type="submit" value="Submit">
           </div>
         </div>
@@ -95,7 +96,8 @@
         <h3 id="answer-form-heading">Submit Your Answer</h3>
         <form action="">
           <div class="control">
-            <textarea class="textarea mb-2 is-normal" id="answer-input" placeholder="Enter your answer here" rows="8"></textarea>
+            <textarea class="textarea mb-2 is-normal" id="answer-input" placeholder="Enter your answer here"
+              rows="8"></textarea>
             <input class="button is-normal" type="submit" value="Submit" id="answer-add">
           </div>
         </form>
@@ -103,3 +105,6 @@
     </div>
   </div>
 </section>
+{{#section 'script'}}
+<script src='/js/questions.js'></script>
+{{/section}}
