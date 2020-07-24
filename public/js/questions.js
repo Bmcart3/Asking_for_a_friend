@@ -33,7 +33,12 @@ $(document).ready(function () {
               let newli = $('<li>').text(answer.answer);
               $($answerList).append(newli);
             });
-          });
+          })
+          .catch(function(err) {
+            if (err) {
+              throw(err);
+            }
+          })
       } else {
         $.get('/api/questions/' + 1 + '/answers')
           .then(function (response) {
