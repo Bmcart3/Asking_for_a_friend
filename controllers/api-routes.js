@@ -86,4 +86,12 @@ module.exports = function (app) {
       return res.json(result);
     });
   });
+
+  // Route for getting all questions posted by a certain user
+  app.get('/api/questions/:username', function (req, res) {
+    db.Question.findAll({where: {username: req.params.username }
+    }).then(function (result) {
+      return res.json(result);
+    });
+  });
 };
