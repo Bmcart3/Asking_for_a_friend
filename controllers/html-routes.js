@@ -59,13 +59,13 @@ module.exports = function(app) {
   });
 
   app.get('/dashboard', isAuthenticated, function(req, res) {
-    db.Question.findAll({})
-      .then(questions => {
-        res.locals.metaTags = { 
-          title: 'Dashboard - Asking for a Friend', 
-          description: 'Update and delete questions you\'ve asked and answers you\'ve given.'
-        };
-        res.render('dashboard', { questions: questions });
-      });
+    db.Question.findAll({where: {username: req.user.username }})
+    .then(questions => {
+      res.locals.metaTags = { 
+        title: 'Dashboard - Asking for a Friend', 
+        description: 'Update and delete questions you\'ve asked and answers you\'ve given.'
+      };
+      res.render('dashboard', { questionsAsked: questions });
+    });
   });
 };
