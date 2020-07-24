@@ -4,18 +4,17 @@
       <img src="/assets/img/AskingForAFriend_Nav.png" width="175" height="75">
     </a>
 
-    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-      data-target="navbarBasicExample">
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
     </a>
   </div>
 
-  <div id="navbarBasicExample" class="navbar-menu">
+  <div class="navbar-menu">
     <div class="navbar-start">
       <p class="navbar-item" id="welcome-user">
-        <strong>Welcome &nbsp;<span class="member-name"></span></strong>
+        <span class="member-name"></span>'s Dashboard
       </p>
     </div>
     <div class="navbar-end">
@@ -38,7 +37,7 @@
           Your Questions
         </p>
         <ul id="question-list">
-          {{#each questions}}
+          {{#each questionsAsked}}
           {{#unless answer}}
           <li>
             <a class="panel-block" data-id="{{ id }}">
@@ -76,7 +75,7 @@
     <!--Display the clicked question-->
     <div class="column is-8">
       <div class="box" id="question-box">
-        {{!-- <h3 id="question-heading">Just asking for a friend...</h3> --}}
+        <h3 id="question-heading">Most recent:</h3>
         <div id="display-question">
           <h4 id="display-question-title"></h4>
           <p id="display-question-content"></p>
@@ -99,3 +98,7 @@
     </div>
   </div>
 </section>
+
+{{#section 'script'}}
+<script src='/js/dashboard.js'></script>
+{{/section}}
