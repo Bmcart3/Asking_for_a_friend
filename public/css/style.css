@@ -10,10 +10,11 @@ body {
 
 .body-container {
     background-color: rgb(252, 236, 222);
-    padding-top: 3rem;
+    padding-top: 5rem;
 }
 
 .tagline {
+    padding: 1rem 0;
     font-family: 'Quicksand', sans-serif;
     font-weight: 400;
     font-size: 1.5rem;
@@ -30,91 +31,16 @@ body {
     font-weight: 600;
 }
 
-.card-content,
-.form-header,
-.panel-heading {
-    font-family: 'Patrick Hand', sans-serif;
-    font-size: 2rem;
-}
-
-.panel-block {
-    background-color: white;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 500;
-}
-
-.panel-tabs {
-    background-color: white;
-    font-family: 'Quicksand', sans-serif;
-}
-
-/* section around main questions.handlebars */
-#questions-main {
-    background-color: rgb(252, 236, 222);
-    padding-top: 2rem;
-
-}
-
-/* styles main question/answer body in questions.handlebars */
-#question-box {
-    padding: 2rem;
-}
-
-#answers-heading,
-#answer-form-heading,
-#question-heading {
-    font-family: 'Patrick Hand', sans-serif;
-    font-size: 1.75rem;
-    font-weight: 600;
-    padding-bottom: 10px;
-}
-
-#display-question-title {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 500;
-}
-
-#welcome-user {
-    font-family: 'Patrick Hand', sans-serif;
-    font-size: 1.25rem;
-    font-weight: 500;
-}
-
-#display-question-content {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 500;
-}
-
-#display-createdAt {
-    font-family: 'Quicksand', sans-serif;
-}
-
-#question-details {
-    margin-top: .75em;
-}
-
-#answer-list {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 500;
-    margin-left: 1em;
-}
-
-#answer-list > li {
-    padding-bottom: .5rem;
-}
-
 #alert {
     color: red;
     font-family: 'Didact Gothic', sans-serif;
 }
 
-.remove-num {
-    list-style-type: none;
-}
+@media screen and (max-width: 767px) {
+    .body-container {
+        padding-top: 5vh;
+    }
 
-@media screen and (max-width: 500px) {
-    
     .logo {
         height: 250px;
         width: 250px;
@@ -140,33 +66,67 @@ body {
         font-size: .75rem;
     }
 
-    .panel-block {
-        font-size: .85rem;
+    .card-column {
+        margin: 0 auto;
+    }
+}
+
+@media screen and (width: 768px) {
+    .body-container {
+        padding-top: 7rem;
     }
 
-    #display-question-title {
+    .logo {
+        height: 250px;
+        width: 250px;
+    }
+
+    #login-signup-section {
+        padding: 1.5rem 1rem;
+    }
+
+    .card-column {
+        margin: 0 auto;
+    }
+
+    .card-content {
+        font-size: 1.75rem;
+    }
+    
+    #login-link,
+    #signup-link {
         font-size: 1rem;
     }
+}
 
-    #display-question-content {
-        font-size: .75rem;
-        padding-top: .25rem;
+@media screen and (width: 1024px) {
+    .body-container {
+        padding-top: 10rem;
     }
 
-    #display-username {
-        margin-bottom: 0;
+    .logo {
+        height: 375px;
+        width: 375px;
+    }
+    
+    .card-content {
+        font-size: 2rem;
+        width: 25vw;
+    }
+    
+    .tagline {
+        font-size: 2rem;
+    }
+    
+    #login-link,
+    #signup-link {
+        font-size: 1.2rem;
     }
 
-    #answer-list {
-        font-size: .75rem;
-    }
+}
 
-    #answers-heading,
-    #answer-form-heading,
-    #question-heading {
-        font-family: 'Patrick Hand', sans-serif;
-        font-size: 1.25rem;
-        font-weight: 600;
-        padding-bottom: 10px;
+@media screen and (min-width: 2560px) {
+    .body-container {
+        padding-top: 15rem;
     }
 }

@@ -14,12 +14,12 @@
   <div class="navbar-menu">
     <div class="navbar-start">
       <p class="navbar-item" id="welcome-user">
-        Welcome <span class="member-name"></span>
+        <span class="member-name"></span>'s Dashboard
       </p>
     </div>
     <div class="navbar-end">
-      <div class="navbar-item ">
-        <a class="navlink" href="/dashboard"><span><i class="fas fa-user-clock"></i></span> Dashboard</a>
+      <div class="navbar-item">
+        <a class="navlink" href="/questions"><span><i class="fas fa-home"></i></span> Home</a>
       </div>
       <div class="navbar-item">
         <a class="button logout-btn is-small" href="/logout"><strong>Logout</strong></a>
@@ -34,24 +34,27 @@
       <!--Ask New Question -->
       <article class="panel">
         <p class="panel-heading">
-          Ask a new question!
+          Your Questions
         </p>
-        <div class="panel-block">
-          <div class="control">
-            <label for="title" class="label">Title</label>
-            <input class="input mb-2 is-normal" id="title-input" type="text"
-              placeholder="Enter a title for your question">
-            <label for="content" class="label">Content</label>
-            <textarea class="textarea is-normal" id="question-input"
-              placeholder="Provide any necessary details"></textarea>
-            <input class="button mt-3 is-normal" id="question-form" type="submit" value="Submit">
-          </div>
-        </div>
+        <ul id="question-list">
+          {{#each questionsAsked}}
+          {{#unless answer}}
+          <li>
+            <a class="panel-block" data-id="{{ id }}">
+              <span class="panel-icon">
+                <i class="fas fa-question" aria-hidden="true"></i>
+              </span>
+              {{ title }}
+            </a>
+          </li>
+          {{/unless}}
+          {{/each}}
+        </ul>
       </article>
       <!--All Questions-->
       <article class="panel">
         <p class="panel-heading">
-          All Questions
+          Questions You've Answered
         </p>
         <ul id="question-list">
           {{#each questions}}
@@ -72,7 +75,7 @@
     <!--Display the clicked question-->
     <div class="column is-8">
       <div class="box" id="question-box">
-        <h3 id="question-heading">Just asking for a friend...</h3>
+        <h3 id="question-heading">Most recent:</h3>
         <div id="display-question">
           <h4 id="display-question-title"></h4>
           <p id="display-question-content"></p>
@@ -91,20 +94,11 @@
             </ol>
           </div>
         </div>
-        <hr>
-        <!--Input to answer a question-->
-        <h3 id="answer-form-heading">Submit Your Answer</h3>
-        <form action="">
-          <div class="control">
-            <textarea class="textarea mb-2 is-normal" id="answer-input" placeholder="Enter your answer here"
-              rows="8"></textarea>
-            <input class="button is-normal" type="submit" value="Submit" id="answer-add">
-          </div>
-        </form>
       </div>
     </div>
   </div>
 </section>
+
 {{#section 'script'}}
-<script src='/js/questions.js'></script>
+<script src='/js/dashboard.js'></script>
 {{/section}}

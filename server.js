@@ -21,11 +21,19 @@ app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true 
 app.use(passport.initialize());
 app.use(passport.session());
 
+
 // Set Handlebars as the default templating engine.
 app.engine('handlebars', exphbs({
   handlebars: allowInsecurePrototypeAccess(Handlebars),
-  defaultLayout: 'main' }
-));
+  defaultLayout: 'main',
+  helpers: {
+    section: function(name, options) { 
+      if (!this.section) this.section = {};
+        this.section[name] = options.fn(this); 
+        return null;
+    }
+  }
+}));
 app.set('view engine', 'handlebars');
 
 // Requiring our routes

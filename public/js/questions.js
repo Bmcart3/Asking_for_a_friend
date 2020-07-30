@@ -23,7 +23,8 @@ $(document).ready(function () {
             $title.text(response[0].title);
             $content.text(response[0].question);
             $username.text('Posted by: ' + response[0].username);
-            $created.text(response[0].createdAt);
+            $created.text(response[0].createdAt.slice(0, 10));
+            console.log(response[0].createdAt);
             let answers = response[0].Answers;
             // grabs only the last 5 answers from the Answers object
             let recentAnswers = answers.slice(-5);
@@ -32,7 +33,12 @@ $(document).ready(function () {
               let newli = $('<li>').text(answer.answer);
               $($answerList).append(newli);
             });
-          });
+          })
+          .catch(function(err) {
+            if (err) {
+              throw(err);
+            }
+          })
       } else {
         $.get('/api/questions/' + 1 + '/answers')
           .then(function (response) {
@@ -42,7 +48,7 @@ $(document).ready(function () {
             $title.text(response[0].title);
             $content.text(response[0].question);
             $username.text('Posted by: ' + response[0].username);
-            $created.text(response[0].createdAt);
+            $created.text(response[0].createdAt.slice(0, 10));
             let answers = response[0].Answers;
             // grabs only the last 5 answers from the Answers object
             let recentAnswers = answers.slice(-5);
@@ -128,7 +134,7 @@ $(document).ready(function () {
         $title.text(response[0].title);
         $content.text(response[0].question);
         $username.text('Posted by: ' + response[0].username);
-        $created.text(response[0].createdAt);
+        $created.text(response[0].createdAt.slice(0, 10));
         // $created.text(moment.utc(response[i].createdAt.local().format('LLL')));
 
         localStorage.setItem('questionId', response[0].id);
