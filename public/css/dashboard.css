@@ -1,0 +1,32 @@
+.dashboard-panel-blocks {
+   justify-content: space-between;
+}
+
+.edit-btn {
+    border: none;
+}
+
+.edit-btn:hover {
+    color: red;
+}
+
+.edit-btn-main {
+    margin-right: 5px;
+}
+
+.del-btn-main {
+    margin-left: 5px;
+}
+
+.edit-btn-main:hover {
+    color: red;
+}
+
+.del-btn-main:hover {
+    color: red;
+}
+
+.title-and-buttons {
+    display: flex;
+    justify-content: space-between;
+}
