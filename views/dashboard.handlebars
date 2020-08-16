@@ -40,11 +40,14 @@
           {{#each questionsAsked}}
           {{#unless answer}}
           <li>
-            <a class="panel-block" data-id="{{ id }}">
-              <span class="panel-icon">
+            <a class="panel-block dashboard-panel-blocks" data-id="{{ id }}">
+              <div>
+                <span class="panel-icon">
                 <i class="fas fa-question" aria-hidden="true"></i>
-              </span>
-              {{ title }}
+                </span>
+                {{ title }}
+              </div>
+              <button class="edit-btn button is-small"><i class="far fa-edit"></i></button>
             </a>
           </li>
           {{/unless}}
@@ -77,7 +80,12 @@
       <div class="box" id="question-box">
         <h3 id="question-heading">Most recent:</h3>
         <div id="display-question">
-          <h4 id="display-question-title"></h4>
+          <div class="title-and-buttons">
+            <h4 id="display-question-title"></h4>
+            <div class="buttons">
+              
+            </div>
+          </div>
           <p id="display-question-content"></p>
           <div id="question-details">
             <span id="display-username" class="content is-small mt-3"></span>
