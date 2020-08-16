@@ -44,6 +44,7 @@ module.exports = function (app) {
     // create an Answer and associate it to question with id of req.params.id
     db.Answer.create({
       answer: req.body.answer,
+      answeredBy: req.body.answeredBy,
       QuestionId: req.params.id
     }).then(createdAnswer => {
       res.json(createdAnswer);

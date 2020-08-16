@@ -5,7 +5,7 @@ module.exports = function (sequelize, DataTypes) {
     answer: {
       type: DataTypes.TEXT,
       allowNull: false
-    },
+    }
 
   });
   Answer.associate = function(model) {
