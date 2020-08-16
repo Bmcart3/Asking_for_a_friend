@@ -34,9 +34,9 @@ $(document).ready(function () {
               $($answerList).append(newli);
             });
           })
-          .catch(function(err) {
+          .catch(function (err) {
             if (err) {
-              throw(err);
+              throw (err);
             }
           })
       } else {
@@ -105,19 +105,36 @@ $(document).ready(function () {
 
   // When user adds a new answer...
   $($answerBtn).on('click', function (event) {
-    let dataId = $(this).attr('data-id');
-    let id = (typeof dataId === 'undefined') ? 1 : dataId;
-    event.preventDefault();
-    let newAnswer = {
-      answer: $('#answer-input').val().trim()
-    };
-    console.log(newAnswer);
-    $.post('/api/questions/' + id + '/answers', newAnswer)
+
+    // const getAskedBy = () => {
+    //   let id = $(this).attr('data-id');
+    //   $.get('/api/questions/' + id + '/answers')
+    //   .then(function(response) {
+    //      response.username
+    //   })
+    // }
+    const newAnswer = username => {
+      let dataId = $(this).attr('data-id');
+      let id = (typeof dataId === 'undefined') ? 1 : dataId;
+      event.preventDefault();
+      const newAnswer = {
+        answer: $('#answer-input').val().trim(),
+        answeredBy: username
+      };
+      console.log(newAnswer);
+      $.post('/api/questions/' + id + '/answers', newAnswer)
+        .then(function (response) {
+          let newAnswer = $('<li>' + response.answer + '</li>');
+          $($answerList).append(newAnswer);
+          $('#answer-input').val('');
+        });
+    }
+    
+    $.get('/api/user_data')
       .then(function (response) {
-        let newAnswer = $('<li>' + response.answer + '</li>');
-        $($answerList).append(newAnswer);
-        $('#answer-input').val('');
+        newAnswer(response.username);
       });
+
   });
 
   // When a question is clicked from the "All Questions" panel
