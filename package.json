@@ -26,7 +26,7 @@
     "express-handlebars": "^4.0.4",
     "express-session": "^1.17.1",
     "handlebars": "^4.7.6",
-    "luxon": "^1.24.1",
+    "luxon": "^1.28.1",
     "moment": "^2.26.0",
     "mysql2": "^2.1.0",
     "passport": "^0.4.1",
